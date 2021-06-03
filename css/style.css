@@ -1,0 +1,791 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,400;0,500;1,700&display=swap');
+
+
+*{  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* EFFET LOADER */
+
+.loader{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lettre{
+	color: #484848;
+	font-size: 80px;
+	letter-spacing: 15px;
+	margin-bottom: 300px;
+	animation: flash 4s linear infinite;
+}
+
+@keyframes flash{
+	0%{
+		color: #fff900;
+		text-shadow: 0 0 10px #fff900;
+	}
+	100%{
+		color: #fff900;
+		text-shadow: 0 0 10px #fff900;
+	}
+}
+
+.lettre:nth-child(1) {
+animation-delay: 0.2s; 
+}
+.lettre:nth-child(2) {
+animation-delay: 0.4s; 
+}
+.lettre:nth-child(3) {
+animation-delay: 0.6s; 
+}
+.lettre:nth-child(4) {
+animation-delay: 0.8s; 
+}
+.lettre:nth-child(5) {
+animation-delay: 1s; 
+}
+.lettre:nth-child(6) {
+animation-delay: 1.2s; 
+}
+.lettre:nth-child(7) {
+animation-delay: 1.4s; 
+}
+.lettre:nth-child(8) {
+animation-delay: 1.6s; 
+}
+.lettre:nth-child(9) {
+animation-delay: 1.8s; 
+}
+.lettre:nth-child(10) {
+animation-delay: 2s; 
+}
+.lettre:nth-child(11) {
+animation-delay: 2.4s; 
+}
+.lettre:nth-child(12) {
+animation-delay: 2.8s; 
+}
+.lettre:nth-child(13) {
+animation-delay: 3.2s; 
+}
+
+.fondu-out{
+	opacity: 0;
+	transition: opacity 4s ease-out;
+}
+
+
+/* EFFET CLICK  */
+
+.clickAnim{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: linear-gradient(to top, #ff4e50, #f9d423);
+	position: absolute;
+	z-index: 999; 
+	transform: scale(0);
+	transform-origin: center;
+	animation: clickAnim 1s ease-in-out;
+}
+
+@keyframes clickAnim{
+	0%{
+		transform: scale(0);
+	}
+	50%{
+		transform: scale(2);
+		opacity: 1;
+	}
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+
+.max-width{
+	max-width: 1300px;
+	padding: 0 20px;
+	margin: auto;
+}
+
+
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* NAVBAR */
+
+.navbar{
+	position: fixed;
+	width: 100%;
+	padding: 5px 0;
+	z-index: 999;
+    font-family: 'Ubuntu', sans-serif; 
+    transition: all 0.3s ease;
+}
+.navbar.scroll{
+   padding: 5px 0;
+   background-color: crimson;
+}
+.navbar .max-width{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;	
+}
+
+.logo{
+	opacity: 0.9;
+}
+.navbar img{
+	width: 150px;
+	height: 80px;
+}
+.navbar .menu li{ 
+   list-style: none;
+   display: inline-block;
+   margin-left: 25px;
+}
+.navbar .menu li a{
+	display: block;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   text-decoration: none;
+   transition: 0.3s ease;
+}
+.navbar .menu li a:hover{
+   color: crimson;
+}
+.navbar.scroll .menu li a:hover{
+	color: white;
+}
+.menu-btn{
+	color: #fff; 
+	font-size: 25px;
+	cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+/* SECTION ACCUEIL */
+
+.home{
+    display: flex;
+    background-image: url("../image/img2.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    min-height: 500px;
+    color: #fff;
+    font-family: 'Ubuntu';
+}
+.home .max-width{
+	margin: auto 0 auto 40px;
+}
+
+.home-content .text1{
+    font-size: 27px;
+}
+.home-content .text2{
+   font-size: 75px;
+   font-weight: 600;
+   margin-left: -3px; 
+}
+.home-content .text3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home-content .text3 span{
+    color: crimson;
+    font-weight: 500;
+}
+
+
+
+
+/* SECTION A PROPOS */
+
+section, footer{
+	padding: 100px 0;
+	font-family: 'Poppins', sans-serif; 
+}
+
+section .title{
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	font-weight: 500;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::before{
+	content: ""; 
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 3px;
+	width: 180px;
+	background: #111;
+}
+section .title::after{
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	font-size: 20px;
+	color: crimson;
+	padding: 5px;
+	transform: translateX(-50%);
+	background: #fff;
+}
+
+.about .title::after{
+	content: "Qui je suis"
+}
+
+.about-content img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-content, .parcours-content, .competences-content, .contact-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.about-content .left{
+	width: 45%;
+}
+.about-content .right{
+	width: 55%;
+}
+.about-content .right .text{
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.about-content .right .text span{
+	color: crimson;
+}
+.about-content .right p{
+	text-align: justify;
+}
+.about-content .right a{
+	display: inline-block;
+	background-color: crimson;
+	color: #fff; 
+	font-size: 20px;
+	padding: 10px 30px;
+	margin-top: 20px;
+	border-radius: 6px;
+	border: 2px solid crimson;
+	transition: all 0.3s ease;
+}
+.about-content .right a:hover{
+	color: crimson; 
+	background: none;
+}
+
+
+/* SECTION PARCOURS */
+
+
+.parcours, .realisations{
+	color: #fff;
+	background: #111;
+}
+
+.parcours .title::after{
+	background-color: #111;
+   content: "parcours profesionnel";
+}
+.parcours .title::before{
+	content: ""; 
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 3px;
+	width: 300px;
+	background: #fff;
+}
+
+.parcours-content .card{
+    width: 33%;
+    height: 250px;
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.parcours-content .card:hover{
+	background: crimson;
+}
+.parcours-content .card i{
+	font-size: 50px;
+	color: crimson;
+	transition: color 0.3s ease;
+}
+.parcours-content .card:hover i{
+ color: #fff;
+}
+.parcours-content .card .text{
+	font-size: 20px;
+	font-weight: 500;
+	margin: 10px 0 7px 0;
+}
+.parcours-content .card .box{
+	transition: all 0.3s ease; 
+}
+.parcours-content .card:hover .box{
+	transform: scale(1.05);
+}
+
+
+
+
+/* SECTION COMPETENCES */
+
+.competences .title::after{
+	content: "Compétences acquises"
+}
+.competences .title::before{
+	content: ""; 
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 3px;
+	width: 300px;
+	background: #111;
+}
+
+.competences-content .column{
+	width: 50%;
+}
+.competences-content p{
+	text-align: left;
+}
+
+.competences-content .text{
+	font-size: 20px;
+	font-weight: 600; 
+	margin-bottom: 10px;
+}
+.competences-content .bars{
+     margin-bottom: 15px;
+}
+.competences-content .info{
+     display: flex;
+     margin-bottom: 5px;
+     align-items: center;
+     justify-content: space-between;
+}
+.competences-content span{
+     font-weight: 500;
+     font-size: 18px;
+}
+.competences-content .line{
+	height: 5px;
+	width: 100%;
+	background: lightgrey;
+	position: relative;
+}
+.competences-content .line::before{
+	content: "";
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: crimson;
+}
+.competences-content .html::before{
+   width: 90%;
+}
+.competences-content .css::before{
+   width: 90%;
+}
+.competences-content .js::before{
+   width: 60%;
+}
+.competences-content .php::before{
+   width: 40%;
+}
+.competences-content .mysql::before{
+   width: 50%;
+}
+.competences-content .wordpress::before{
+   width: 50%;
+}
+.competences-content .photoshop::before{
+   width: 50%;
+}
+.competences-content .react::before{
+   width: 2%;
+}
+
+
+
+
+
+/* SECTION REALISATIONS */
+
+.realisations .title::before{
+	content: ""; 
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 3px;
+	width: 300px;
+	background: #fff;
+}
+.realisations .title::after{
+	background-color: #111;
+	content: "Mes réalisations";
+}
+.realisations .carousel .card{
+	background: #222;
+	border-radius: 6px;
+	padding: 25px 35px;
+	text-align: center;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+.realisations .carousel .card:hover{
+	background: crimson;
+}
+
+.realisations .carousel .card img{
+	height: 150px;
+	width: 150px;
+	object-fit: cover;
+	border-radius: 50%;
+   border: 5px solid crimson;
+   transition: all 0.3s ease;
+}
+.realisations .carousel .card:hover img{
+	border-color: #fff;
+}
+.realisations .carousel .box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+.realisations .carousel .card:hover .box{
+	transform: scale(1.05);
+}
+.realisations .carousel .card .text{
+	font-size: 25px;
+	font-weight: 500;
+	margin: 10px 0 7px 0;
+}
+
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid crimson!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active, .owl-dot:hover{
+    background: crimson!important;
+}
+
+
+
+
+
+/* FORMULAIRE DE CONTACT */
+
+.contact .title::after{
+	content: "Formulaire";
+}
+.contact .contact-content .column{
+    width: 50%;
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icon{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: crimson;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    color: #333;
+}
+
+.contact .right form .champs{
+    display: flex;
+}
+.contact form .champ, .champs{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+ }
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right input, textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact form .nom{
+    margin-right: 10px;
+}
+.contact textarea{
+  padding-top: 10px;
+  resize: none;
+}
+form button{
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: crimson;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+form button:hover{
+  color: crimson;
+  background: none;
+}
+
+.contact .right form.disable{
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* FOOTER */
+
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+
+/* RESPONSIVE MEDIA QUERY*/
+
+
+@media(max-width: 740px){
+
+/* EFFET LOADER */
+
+.lettre{
+	color: #484848;
+	font-size: 40px;
+	letter-spacing: 10px;
+}
+
+/* NAVBAR */
+
+    .max-width{
+	padding: 0 10px;}
+    
+    .navbar .menu{
+     position: fixed;
+     background-color: black;
+     height: 100vh; 
+     width: 100%;
+     left: -100%;
+     top: 0;
+     text-align: center;
+     padding-top: 80px;
+     transition: all 0.3s ease;
+  	}
+
+  	.navbar .menu.active{
+        left: 0;
+  	}
+
+    .navbar .menu li{
+  	 display: block;}
+
+  	.navbar .menu li a{
+  	  display: inline-block;
+  	  margin: 20px 0;
+  	  font-size: 25px;
+  	}
+
+/* SECTION ACCUEIL */
+
+  	.home .max-width{
+  		margin-left: 0px;
+  	}
+
+  	.menu-btn{
+  	  display: block;
+  	  z-index: 999;}
+
+	.menu-btn i.active:before{
+        content: "\f00d";
+  	}
+
+    .home-content .text2{
+	   font-size: 50px;}
+	.home-content .text3{
+	    font-size: 25px;}
+
+	.home-content a{
+		font-size: 15px; 
+	    padding: 10px 25px;
+	}
+
+	/* SECTION A PROPOS */
+
+	.about .about-content .column{
+       width: 100%;
+	}
+	.about .about-content .left{
+		display: flex;
+		justify-content: center;
+		margin: 0 auto 60px;
+	}
+	.about .about-content .right{
+		flex: 100%;
+	}
+
+	.about .about-content .left img{
+		height: 350px;
+		width: 350px; 
+	}
+
+/* SECTION PARCOURS */
+
+	.parcours-content .card{
+		width: 100%;
+        margin-bottom: 20px;
+	}
+
+
+/* SECTION COMPETENCES */
+
+   .competences-content .column{
+   	width: 100%;
+   	margin-bottom: 35px;
+   }
+
+/* FORMULAIRE DE CONTACT */
+
+   .contact .contact-content .column{
+   	width: 100%;
+   	margin-bottom: 35px;
+   }
+}
+
+
+
+@media(max-width: 982px){
+
+	.about .about-content .column{
+       width: 100%;
+	}	
+	.about .about-content .left{
+		display: flex;
+		justify-content: center;
+		margin: 0 auto 60px;
+	}
+	.about .about-content .right{
+		flex: 100%;
+	}
+
+
+}
+
+
+
